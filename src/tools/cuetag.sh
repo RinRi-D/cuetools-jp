@@ -176,7 +176,8 @@ main()
 		exit
 	fi
 
-	cue_file=$1
+    sed '1s/^\xEF\xBB\xBF//' < $1 > temp-cuetag-sh.cue
+	cue_file=temp-cuetag-sh.cue
 	shift
 
 	ntrack=$(cueprint -d '%N' "$cue_file")
@@ -214,6 +215,8 @@ main()
 		esac
 		trackno=$(($trackno + 1))
 	done
+
+    rm -f temp-cuetag-sh.cue
 }
 
 main "$@"
