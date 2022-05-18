@@ -1,4 +1,8 @@
-# cuetools [![Build Status](https://travis-ci.org/svend/cuetools.svg?branch=master)](https://travis-ci.org/svend/cuetools)
+This is a fork of https://github.com/svend/cuetools which adds two things to cuetag.sh:
+- Removes UTF-8 byte order mark (BOM). Some cue files have those marks and they prevent cuetag.sh to work properly.
+- Adds --no-utf8-convert flag to metaflac command for Japanese characters to work
+
+# cuetools [![Build Status](https://travis-ci.org/rinri-d/cuetools-jp.svg?branch=master)](https://travis-ci.org/rinri-d/cuetools-jp)
 
 cue and toc file parsers and utilities
 
@@ -21,3 +25,4 @@ Directory layout:
 - `src/` all source files
 - `src/lib/` scanning, parsing, and printing library
 - `src/tools/` cue and toc tools
+
